@@ -12,7 +12,7 @@
     // Service logic
     // ...
 
-    var owners = ['Anthony Version', 'Miguel Mendez', 'Vivian Sandoval', 'John Croll', 'Chris Horst', 'Henry Schniedermeier', 'Stu Lewis', 'Kevin Kraft', 'Yash Sidhartha', 'Sakif Ferdous'];
+    var owners = ['Anthony Versino', 'Miguel Mendez', 'Vivian Sandoval', 'John Croll', 'Chris Horst', 'Henry Schniedermeier', 'Stu Lewis', 'Kevin Kraft', 'Yash Sidhartha', 'Sakif Ferdous'];
 
     // Public API here
     var Owners = {

@@ -3,7 +3,77 @@
 </div>
 <div class="modal-body">
   <p>Modal Body</p>
+  <form name="materialForm" class="form-horizontal">
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="Date Received">Date Received</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="open($event,'datereceived')">
+              <i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="material.datereceived" is-open="datepickers.datereceived" max="'2015-06-22'" datepicker-options="" date-disabled="disabled(date, mode)" ng-required="true" show-weeks="false" show-button-bar="false" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="owner">Description</label>
+      <div class="col-sm-10">
+        <textarea id="description" name="description" ng-model="material.description" type="text" placeholder="Description" class="form-control" rows="3" required=""></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="owner">Owner</label>
+      <div class="col-sm-10">
+        <select id="owner" name="owner" ng-model="material.owner" class="form-control" ng-options="owner for owner in owners" required=""></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="category">Category</label>
+      <div class="col-sm-10">
+        <select id="category" name="category" ng-model="material.category" class="form-control" ng-options="category for category in categories"></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="disposaldate">Disposal Date</label>
+      <div class="col-sm-10">
+        <div class="input-group">
+          <span class="input-group-btn">
+          <button class="btn btn-default" ng-click="open($event,'disposaldate')">
+              <i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          <input type="text" class="form-control" datepicker-popup="yyyy-MM-dd" ng-model="material.disposaldate" is-open="datepickers.disposaldate" max="'2015-06-22'" datepicker-options="" date-disabled="disabled(date, mode)" ng-required="true" show-weeks="false" show-button-bar="false" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="location">Location</label>
+      <div class="col-sm-10">
+        <input id="location" name="location" ng-model="material.location" type="text" placeholder="Location" class="form-control" required="" />
+    </div>
+  </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="project">Project</label>
+      <div class="col-sm-10">
+        <input id="project" name="project" ng-model="material.project" type="text" placeholder="Project" class="form-control" required="" />
+      </div>
+    </div>
+
+  </form>
+  <p>{{ id }}</p>
+  <p>{{ material }}</p>
+  <p>{{ material.id }}</p>
+  <p>{{ id }}</p>
 </div>
 <div class="modal-footer">
+  <button ng-click="save()" type="submit" ng-if="id"  class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Save</button>
+  <button ng-click="add()" type="submit" ng-if="!id"  class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Add</button>
   <button ng-click="cancel()" class="btn">Cancel</button>
 </div>

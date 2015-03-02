@@ -36,8 +36,15 @@
     $scope.open = function(materialId) {
       var modalInstance = $modal.open({
         templateUrl: 'views/partials/addmaterialmodal.html',
-        controller: 'ModalInstanceCtrl'
+        controller: 'ModalInstanceCtrl',
+        resolve: {
+          id: function () {
+            return materialId; 
+          }
+        }
       });
+
+
     };
 
 

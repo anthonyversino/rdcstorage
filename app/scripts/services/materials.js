@@ -1,3 +1,4 @@
+/* Global Firebase */
 'use strict';
 
 /**
@@ -8,8 +9,10 @@
  * Factory in the rdcstorageApp.
  */
  angular.module('rdcstorageApp')
- .factory('Materials', function (fbutil) {
+ .factory('Materials', function (fbutil, $firebase, FBURL) {
   var materials = fbutil.syncArray('materials');
+
+  var ref = new Firebase(FBURL);
 
   var Materials = {
     all: materials,
@@ -17,7 +20,7 @@
       return materials.$add(material);
     },
     get: function (materialId) {
-      return materials.child(materialId).$asObjectI();
+      return $firebase(ref.child('materials').child(materialId)).$asObject();
     },
     delete: function (material) {
       return materials.$remove(material);
