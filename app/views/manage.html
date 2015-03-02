@@ -1,0 +1,52 @@
+<h1>Manage your storage man!</h1>
+<section>
+  <input type="text" ng-model="search" class="search-query pull-left" placeholder="Search">
+  <button ng-click="open()" class="btn btn-primary pull-right"><i class="icon-white icon-plus"></i>Add new material</button>
+</section>
+<table class="table table-striped">
+
+  <thead>
+    <tr>
+      <td>Disposal Date</td>
+      <td>Owner</td>
+      <td>Description</td>
+      <td>Date Recieved</td>
+      <td>Location</td>
+      <td>Project</td>
+      <td>Category</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="material in materials | filter:search">
+      <td>{{ material.disposaldate }}</td>
+      <td>{{ material.owner }}</td>
+      <td>{{ material.description }}</td>
+      <td>{{ material.datereceived }}</td>
+      <td>{{ material.location }}</td>
+      <td>{{ material.project }}</td>
+      <td>{{ material.category }}</td>
+      <td>
+        <a href="" class="btn btn-primary btn-xs" ng-click="open(material.$id)">Edit</a>
+        <a href="" class="btn btn-default btn-xs" ng-click="deleteMaterial(material)">Delete</a>
+      </td>
+  </tbody>
+</tr>
+
+<script type="text/ng-template" id="add_material_modal">
+  <div class="modal-header">
+    <h3>Material Form</h3>
+  </div>
+  <div class="modal-body">
+    <p>Modal Body</p>
+  </div>
+  <div class="modal-footer">
+    <button ng-click="cancel()" class="btn">Cancel</button>
+  </div>
+</script>
+<!-- <div>
+Owners: {{ owners }} </br>
+Categories: {{ categories }} </br>
+Materials: {{ materials }}
+</div> -->
