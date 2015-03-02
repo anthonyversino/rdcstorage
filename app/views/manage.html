@@ -7,14 +7,14 @@
 
   <thead>
     <tr>
-      <td>Disposal Date</td>
-      <td>Owner</td>
-      <td>Description</td>
-      <td>Date Recieved</td>
-      <td>Location</td>
-      <td>Project</td>
-      <td>Category</td>
-      <td>Actions</td>
+      <th>Disposal Date</th>
+      <th>Owner</th>
+      <th>Description</th>
+      <th>Date Recieved</th>
+      <th>Location</th>
+      <th>Project</th>
+      <th>Category</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -28,8 +28,8 @@
       <td>{{ material.project }}</td>
       <td>{{ material.category }}</td>
       <td>
-        <a href="" class="btn btn-primary btn-xs" ng-click="open(material.$id)">Edit</a>
-        <a href="" class="btn btn-default btn-xs" ng-click="deleteMaterial(material)">Delete</a>
+        <a href="" ng-click="open(material.$id)"><span class="glyphicon glyphicon-edit"></span></a>
+        <a href="" ng-click="deleteMaterial(material)"><span class="glyphicon glyphicon-trash"></span></a>
       </td>
   </tbody>
 </tr>
