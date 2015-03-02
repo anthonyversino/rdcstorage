@@ -39,11 +39,15 @@ angular.module('rdcstorageApp')
     };
 
     $scope.save = function () {
+      $scope.material.datereceived = $filter('date')($scope.material.datereceived, 'yyyy-MM-dd').toString();
+      $scope.material.disposaldate = $filter('date')($scope.material.disposaldate, 'yyyy-MM-dd').toString();
       $scope.material.$save();
       $modalInstance.dismiss('cancel');
     };
 
     $scope.add = function () {
+      $scope.material.datereceived = $filter('date')($scope.material.datereceived, 'yyyy-MM-dd').toString();
+      $scope.material.disposaldate = $filter('date')($scope.material.disposaldate, 'yyyy-MM-dd').toString();
       Materials.create($scope.material);
       $modalInstance.dismiss('cancel');
     };
